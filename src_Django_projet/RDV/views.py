@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def prise_rdv(request):
+    return render(request,"rdv.html")

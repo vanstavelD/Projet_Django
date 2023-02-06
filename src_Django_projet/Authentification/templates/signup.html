@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %} <!-- Block de contenu -->
+
+<h1>S'inscrire</h1>
+<form method="POST"> <!-- formulaire avec la méthode POST qui permet d'envoyer des informations avec la requète  -->
+    {% csrf_token %} <!-- jeton de sécurité -->
+    <p>
+        <label for="username">Nom d'utilisateur</label> <!-- afficher le texte -->
+        <input id="username" type="text" name="username"> <!-- récuperer le nom d'utilisateur -->
+    </p>
+    <p><label for="password">Mot de passe</label></p>
+    <input id="password" type="password" name="password"> <!-- récuperer le mot de passe -->
+    <button type="submit">S'inscrire</button>
+</form>
+
+{% endblock %}
