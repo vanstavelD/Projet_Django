@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prendre un rendez-vous</title>
+</head>
+<body>
+    <h1>Prendre un rendez-vous</h1>
+    <form method="POST" class ="post-form">
+        {% csrf_token %}
+         {{ form.as_p }} <!--insertion du formulaire -->
+        <button type="submit" class ="save btn">Prendre rendez-vous</button>
+    </form>
+</body>
+</html>
