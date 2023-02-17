@@ -1,14 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site web</title>
-</head>
-<body>
-    
-    <h1>Bonjour, bienvenur sur mon site</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block head %}
+  <link rel="stylesheet" href="{% static 'django_project/page_accueil.css' %}">
+{% endblock head %}
+
+{% block content %}
+  <div class="container">
+    <h4>Dylan Vanstavel Coaching et Développement Personnel</h4>
+    <h5>Le Coaching</h5>
+    <p>Le coaching c’est l’accompagnement d’une personne, dans l’élaboration, la réflexion et la mise en œuvre de ses projets professionnels ou personnels.
+      C’est un accompagnement individuel qui, par l’écoute, le dialogue, des outils et une posture, vous aide dans une période donnée et dans un cadre fixé, dans l’atteinte de vos objectifs et de votre épanouissement. <br>
+      Avoir un objectif, c’est déterminer ce que l’on veut, définir ses priorités, orienter sa vie et lui donner un sens. <br>
+      C’est un accompagnement à votre rythme vers l’autonomie. C’est un échange humain basé sur le respect de l’autre qui vous permet de mieux vous comprendre ; de découvrir, développer et utiliser votre potentiel.
+      La philosophie du coaching part du principe que chaque personne détient-en elle «  ses propres solutions » et repose sur la question du « comment faire ».  On se concentre sur la solution et l’action. <br>
+      « Comment peut-on apprendre à se connaître soi-même? Par la méditation, jamais, mais bien par l’action. » Gandhi
+    </p>
+    <img src="{% static 'django_project/coaching-developpement-personnel.png' %}" alt="image developpement personnel">
+
+    <p>« Comment peut-on apprendre à se connaître soi-même? Par la méditation, jamais, mais bien par l’action. » Gandhi</p>
+  </div>
+  <div>
+  <h5>Déroulement d’une séance</h5>
+  <ul>Une séance de coaching est basée sur l’écoute, le questionnement et différentes techniques en fonction de la situation. 
+     <li> Au cours de la première séance de coaching on échange ensemble, sur ce qui vous amène, la situation du moment, les questions que vous vous posez pour ensuite définir ce que vous voulez.</li>
+     <li> Au fil des séances une vraie dynamique se crée, différents outils sont utilisés pour vous aider à atteindre votre/vos objectif(s), trouver vos propres ressources et les utiliser. Cela vous permettra d’avancer dans la direction souhaitée.</li> </ul>
+</div>
+<div>
+  <h5>Durée d'une Séance</h5>
+  <p>Chaque séance dure environ 45min <br> Pour les adolescents de moins de 18 ans – Un premier entretien de 30 minutes est offert – en visio ou en cabinet <br> Pour les adultes, un premier échange de 20min est proposé par visio ou téléphone </p>
+  <h5>Tarif</h5>
+  <p>Particulier : 60 € / séance – 45min <br> Entreprise : sur devis </p>
+</div>
+
+{% endblock %}

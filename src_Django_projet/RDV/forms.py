@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, DateInput, TimeInput
+from django.forms import ModelForm, DateInput, TimeInput, Select
 from.models import prendre_rendez_vous
 
 
@@ -18,5 +18,5 @@ class formulaire_rdv(ModelForm):
         fields=["date", "heure", "nom","téléphone","email", "description"] # Les champs que l'on va ajouter sur le formulaire
         widgets = {
             'date': DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
-            'heure': TimeInput(attrs={'type': 'time'}, format='%H:%M'),
+            'heure': Select(choices=[('08:00', '08:00'), ('09:00', '09:00'), ('10:00', '10:00'), ('11:00', '11:00'), ('13:00', '13:00'), ('14:00', '14:00'), ('15:00', '15:00'), ('16:00', '16:00'), ('17:00', '17:00')]),
         }

@@ -1,14 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block head%}
+<link rel="stylesheet" href="{% static 'authentification/signup.css' %}">
+{% endblock head %}
 {% block content %} <!-- Block de contenu -->
 
-<h1>S'inscrire</h1>
+<h2>Inscription</h2>
 <form method="POST"> <!-- formulaire avec la méthode POST qui permet d'envoyer des informations avec la requète  -->
     {% csrf_token %} <!-- jeton de sécurité -->
     <p>
         <label for="username">Nom d'utilisateur</label> <!-- afficher le texte -->
         <input id="username" type="text" name="username"> <!-- récuperer le nom d'utilisateur -->
     </p>
+    
+    <p>
+        <label for="first_name">Prénom</label>
+        <input id="first_name" type="text" name="first_name">
+    </p>
+
+    <p>
+        <label for="last_name">Nom</label>
+        <input id="last_name" type="text" name="last_name">
+    </p>
+
+    <p>
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email">
+    </p>
+
+
     <p><label for="password">Mot de passe</label></p>
     <input id="password" type="password" name="password"> <!-- récuperer le mot de passe -->
     <button type="submit">S'inscrire</button>

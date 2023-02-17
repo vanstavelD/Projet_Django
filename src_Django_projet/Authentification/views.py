@@ -7,8 +7,11 @@ def signup(request):
     if request.method == "POST":  #(pour récuperer les informations du formulaire) Si on est en présence d'une requete POST:
         #traiter le formulaire
         username = request.POST.get("username") #On recupère les données de l'utilisateur
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
+        email = request.POST.get("email")
         password = request.POST.get("password")
-        user = User.objects.create_user(username=username, password=password) #On crée l'utilisateur
+        user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name) #On crée l'utilisateur
         login(request, user) #On le connecte
         return redirect('homepage') #On le redirige vers la homepage
         

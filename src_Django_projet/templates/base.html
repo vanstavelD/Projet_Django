@@ -1,28 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
     <title>Site developpement personnel</title>
+    {% block head%}
+    {% endblock head %}
 </head>
 <body>
 
+    <nav>
+        <a href="{% url 'homepage' %}">
+            <h1>Dylan Vanstavel Coaching</h1>
+        </a>
+
+        {% if user.is_authenticated %} <!-- si l'utilisateur est connecté -->
+            <a href="{% url 'rdv' %}">Rendez-vous</a>
+        {% endif %}
+
+        <div class="links">
+            {% if user.is_authenticated %} <!-- si l'utilisateur est connecté -->
+            
+                {{ user.username }}
+            <a href="{% url 'logout' %}">Déconnexion</a>
+            {% else %}
+
+            <a href="{% url 'login' %}">Connexion</a>
+            <a href="{% url 'signup' %}">S'inscrire</a>
+            {% endif %}
+        </div>
+    </nav>
+    
 
 
-
-<a href="{% url 'homepage' %}">
-    <h1>Bonjour, bienvenue sur mon site</h1>
-</a>
-
-{% if user.is_authenticated %} <!-- si l'utilisateur est connecté -->
-    {{ user.username }}
-<a href="{% url 'logout' %}">Déconnexion</a>
-{% else %}
-<a href="{% url 'login' %}">Connexion</a>
-<a href="{% url 'signup' %}">S'inscrire</a>
-
-{% endif %}
 
 {% block content %}
 {% endblock %}
